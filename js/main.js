@@ -6,7 +6,7 @@ window.onscroll = function(){
 
 
 function scrollFunction(){
-	if( document.body.scrollTop>120|| document.documentElement.scrollTop >120){
+	if( document.body.scrollTop>30|| document.documentElement.scrollTop >30){
 		navbar.classList.add("navbar-fixed");
 	}else{
 		navbar.classList.remove("navbar-fixed");
