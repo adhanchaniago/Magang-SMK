@@ -1,0 +1,160 @@
+html {
+    height: 100%;
+    --bg: #5b8efb;
+    --bg-navbar:#5b8efb;
+    --color-headings: #909090;
+    --color-text: #5b8efb;
+    --bg-box:white;
+    --btn-primary: #007bff ;
+    --select:#5b8efb;
+}
+
+html[data-theme='dark'] {
+    --bg: #2d2d2d;
+    --bg-navbar:#434343;
+    --color-headings: white;
+    --color-text: white;
+    --bg-box:#434343;
+    --select:#2d2d2d;
+    --btn-primary:#3694ff;
+}
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
+}
+
+body{
+  position: absolute;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  background-color: var(--bg);
+}
+
+
+form{
+  font-family: 'Quicksand';
+  width:100%;
+  height:100%;
+  background-color: var(--bg-box);
+  padding-top:20px;
+  color:var(--color-text);
+}
+
+.input{
+  width:95%;
+  height: 45px;
+  margin:10px 2.5%;
+  outline: none;
+  background-color: transparent;
+  border:none;
+  color:var(--color-text);
+  border-bottom: 3px solid var(--color-text);
+  padding-left:10px;
+  font-size:18px;
+}
+
+.text-biodata{
+  text-align: center;
+  font-family: 'Quicksand';
+  font-size:32px;
+  font-weight: 400;
+  color:var(--color-text);
+}
+
+.jurusan{
+  margin-left:10px;
+  margin-top:20px;
+}
+
+.jurusan1{
+  margin-left:10px;
+}
+
+.text-profil{
+  margin-top:10px;
+  margin-left:10px;
+}
+
+.foto{
+  margin-left:10px;
+}
+
+button{
+  width:95%;
+  margin-left:2.5%;
+  margin-top:10px;
+}
+
+label{
+  font-size:18px;
+}
+
+
+select,
+option{
+  color:var(--select);
+}
+
+
+
+@media(min-width: 992px){
+  form{
+    width: 50%;
+    height: 360px;
+    border-radius: 8px;
+    margin:145px auto;
+    padding-top: 15px;
+    background-color: var(--bg-box); 
+    color:var(--color-text);
+  }
+
+  .input{
+    font-size:20px;
+    padding-left: 10px;
+    border-bottom: 3px solid var(--color-text);
+  }
+
+  .text-biodata{
+    text-align: center;
+    font-size: 40px;
+  }
+
+  .jurusan{
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+  .jurusan1{
+    margin-left: 20px;
+  }
+
+  label{
+    font-size:20px;
+    text-transform: capitalize;
+  }
+
+  .text-profil{
+    margin-top: 5px;
+    margin-left:20px;
+  }
+
+  .foto{
+    margin-left:30px;
+    margin-bottom: 10px;
+  }
+
+  button{
+    width: 95%;
+    margin-left:2.5%;
+    height: 45px;
+    margin-top:10px;
+    background-color: var(--btn-primary);
+  }
+}
