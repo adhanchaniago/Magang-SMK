@@ -105,7 +105,7 @@ $result = mysqli_query($koneksi,$perintah2);
     <!-- akhir bar foto profil -->
 
     <div class="box-edit-profil">
-        <a href="update-profil-perusahaan.php?id=<?= $data['id']; ?>" class="text-edit-profil">Edit Profil <i class="fas fa-pencil-alt"></i></a>
+        <a href="update-profil.php?id=<?= $data['id']; ?>" class="text-edit-profil">Edit Profil <i class="fas fa-pencil-alt"></i></a>
     </div>
 
     <!-- beranda karya -->
