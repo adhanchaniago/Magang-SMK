@@ -69,13 +69,24 @@ function login($data){
 		//melakukan pengecekan password
 		$row = mysqli_fetch_assoc($result);
 
+
 		if($pass === $row["password"]){
 			$_SESSION["level"] = $row["level"];
 			$_SESSION["tipe"]  = $row["tipe"];
 			$_SESSION["id"]    = $row["id"];
 			$_SESSION["email"] = $row["email"];
-			header("Location: cek.php");
-			exit;
+			if($row["tipe"]=="siswa"){
+				$id = $row["id"];
+				$query = mysqli_query($koneksi,"SELECT * FROM profil_siswa WHERE id='$id'");
+				$hasil = mysqli_fetch_assoc($query);
+				$_SESSION["nama"]=$hasil["nama"];
+				header("Location: cek.php");
+				exit;
+			}else{
+				header("Location: cek.php");
+				exit;
+			}
+			
 		}else{
 			echo "<script> alert('Password yang anda masukan salah');</script>";
 			return false;
@@ -128,6 +139,7 @@ function tambahBiodataSiswa($data,$id){
 				'$id','$nama','$kota','$sekolah','$jurusan','$gambar')";
 	mysqli_query($koneksi,$perintah);
 	$_SESSION["tipe"]="siswa";
+	$_SESSION["nama"]  = $nama;
 	return mysqli_affected_rows($koneksi);
 }
 

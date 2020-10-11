@@ -1,22 +1,22 @@
 html {
     height: 100%;
     --bg: #FCFCFC;
-    --bg-navbar:#5b8efb;
+    --bg-navbar: #5b8efb;
     --color-headings: #909090;
     --color-text: #4d4d4d;
-    --bg-box:white;
-    --border:#cccccc;
-    --btn-primary: #007bff ;
+    --bg-box: white;
+    --border: #cccccc;
+    --btn-primary: #007bff;
 }
 
 html[data-theme='dark'] {
     --bg: #2d2d2d;
-    --bg-navbar:#434343;
+    --bg-navbar: #434343;
     --color-headings: white;
     --color-text: white;
-    --bg-box:#434343;
-    --border:white;
-    --btn-primary:#3694ff;
+    --bg-box: #434343;
+    --border: white;
+    --btn-primary: #3694ff;
 }
 
 html.transition,

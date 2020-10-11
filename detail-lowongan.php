@@ -27,7 +27,7 @@ $data = tampil($perintah);
   </head>
   <body>
     
-    <!--  navbar -->
+   <!--  navbar -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
       <div class="container">
         <a class="navbar-brand" href="index.php">Magang</a>
@@ -38,19 +38,33 @@ $data = tampil($perintah);
           <div class="navbar-nav ml-auto">
             <a class="nav-item nav-link garis-bawah active" href="index.php">beranda <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link garis-bawah active" href="lowongan.php">lowongan</a>
-            <a class="nav-item nav-link garis-bawah active" href="#">Pesan</a>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                profil
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="singin.php">Masuk</a>
-                <a class="dropdown-item" href="cek.php">Beranda Profile</a>
-                <a class="dropdown-item" href="pengaturan.php">Pengaturan</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="logout.php">Keluar</a>
-              </div>
-            </li>
+            <?php 
+
+             
+
+              if(!isset($_SESSION["id"])){
+                echo "<a class='nav-item nav-link garis-bawah active' href='singin.php'>Masuk</a>";
+              }else{
+                 $nama = explode(" ",$_SESSION["nama"]);
+                echo "<li class='nav-item dropdown'>
+              <a class='nav-link dropdown-toggle active' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>";
+                if($_SESSION["tipe"]=="siswa"){
+                  echo "HI,".$nama[0];
+                }else{
+                  echo "Lainnya";
+                }
+                echo "</a>
+                      <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
+                        <a class='dropdown-item' href='cek.php'>Profil</a>
+                        <a class='dropdown-item' href=''>Pesan</a>
+                        <a class='dropdown-item' href='pengaturan.php'>Pengaturan</a>
+                        <div class='dropdown-divider'></div>
+                        <a class='dropdown-item' href='logout.php'>Keluar</a>
+                      </div>
+                    </li>";
+              }
+
+             ?>
           </div>
         </div>
       </div>
@@ -83,7 +97,7 @@ $data = tampil($perintah);
               <tr class="table-row">
                 <td class="nama-job">
                   <i class="fas fa-map-marked-alt"></i>
-                  <span><?= $data["kota"]; ?> - Indonesia</span>
+                  <span><?= $data["lokasi"]; ?> - <?=  $data["kota"];  ?></span>
                 </td>
               </tr>
               <tr class="table-row">
@@ -97,12 +111,17 @@ $data = tampil($perintah);
                   <i class="fas fa-tags"></i>
                   <span>Rp <?= $data["gaji"];  ?> ,-</span>
                 </td>
-              </tr>
+            
               <tr>
                 <td>
-                  <button class="ajukan btn-success"><span>Ajukan Lamaran</span>
-                  <i class="fad fa-sign-in "></i></button>
-                  <button class="hubungi btn-primary"><span>Hubungi </span><i class="fad fa-comments-alt"></i></button>
+                  <a href="ajukan-lowongan.html">
+                    <button class="ajukan btn-success"><span>Ajukan Lamaran</span>
+                  <i class="fad fa-arrow-to-top"></i></button>
+                  </a>
+                  <a href="lihat-profil-perusahaan.php?id=<?= $data['id']; ?>">
+                     <button class="hubungi btn-primary"><span>Kunjungi </span>
+                   <i class="fad fa-sign-in "></i></button>
+                  </a>
                 </td>
               </tr>
             </tbody>

@@ -1,0 +1,119 @@
+html {
+    height: 100%;
+    --bg: #5b8efb;
+    --bg-navbar:#5b8efb;
+    --color-headings: #909090;
+    --color-text: #5b8efb;
+    --bg-box:white;
+    --btn-primary: #007bff ;
+}
+
+html[data-theme='dark'] {
+    --bg: #2d2d2d;
+    --bg-navbar:#434343;
+    --color-headings: white;
+    --color-text: white;
+    --bg-box:#434343;
+    --btn-primary:#3694ff;
+}
+
+body{
+    background-color: var(--bg);
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    width:100%;
+    min-height: 100%;
+    padding: 20px;
+    position: absolute;
+    background-color: var(--bg-box);
+}
+
+option{
+    color: #5b8efb;
+}
+
+.text-lowongan{
+    text-align:center;
+    font-size: 30px;
+    font-weight:400;
+    color:var(--color-text);
+}
+
+.input{
+    width:98%;
+    height: 45px;
+    margin-top:7.5px;
+    margin-bottom:7.5px;
+    padding-left:10px;
+    color:var(--color-text);
+    font-size:18px;
+    border:none;
+    background-color: transparent;
+    outline: none;
+    margin-left: 1%;
+    border-bottom: 2.5px solid var(--color-text);
+}
+
+.btn{
+    width:98%;
+    margin-top: 15px;
+    margin-left: 1%;
+    font-size:18px;
+    color:white;
+}
+
+.input::placeholder{
+    color:var(--color-text);
+    font-weight: 400;
+}
+
+@media(min-width:992px){
+    form{
+        position: static;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        width:55%;
+        min-height: 400px;
+        padding: 20px;
+        border-radius:5px;
+    }
+
+    .text-lowongan{
+        text-align:center;
+        font-size: 40px;
+        font-weight:400;
+        color:var(--color-text);
+    }
+
+    .input{
+        width:98%;
+        height: 45px;
+        margin-top:7.5px;
+        margin-bottom:7.5px;
+        padding-left:10px;
+        color:var(--color-text);
+        font-size:18px;
+        border:none;
+        background-color: transparent;
+        outline: none;
+        margin-left: 1%;
+        border-bottom: 2.5px solid var(--color-text);
+    }
+
+    .setengah{
+        width:48%;
+        margin-left:1%;
+    }
+
+    .btn{
+        width:98%;
+        margin-top: 10px;
+        margin-left: 1%;
+        font-size:18px;
+        color:white;
+    }
+
+}

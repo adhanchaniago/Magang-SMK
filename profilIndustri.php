@@ -50,19 +50,33 @@ $_SESSION["foto"] = $data["foto"];
           <div class="navbar-nav ml-auto">
             <a class="nav-item nav-link garis-bawah active" href="index.php">beranda <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link garis-bawah active" href="lowongan.php">lowongan</a>
-            <a class="nav-item nav-link garis-bawah active" href="#">Pesan</a>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                profil
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="singin.php">Masuk</a>
-                <a class="dropdown-item" href="cek.php">Beranda Profil</a>
-                <a class="dropdown-item" href="pengaturan.php">Pengaturan</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="logout.php">Keluar</a>
-              </div>
-            </li>
+            <?php 
+
+             
+
+              if(!isset($_SESSION["id"])){
+                echo "<a class='nav-item nav-link garis-bawah active' href='singin.php'>Masuk</a>";
+              }else{
+                 $nama = explode(" ",$_SESSION["nama"]);
+                echo "<li class='nav-item dropdown'>
+              <a class='nav-link dropdown-toggle active' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>";
+                if($_SESSION["tipe"]=="siswa"){
+                  echo "HI,".$nama[0];
+                }else{
+                  echo "Lainnya";
+                }
+                echo "</a>
+                      <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
+                        <a class='dropdown-item' href='cek.php'>Profil</a>
+                        <a class='dropdown-item' href=''>Pesan</a>
+                        <a class='dropdown-item' href='pengaturan.php'>Pengaturan</a>
+                        <div class='dropdown-divider'></div>
+                        <a class='dropdown-item' href='logout.php'>Keluar</a>
+                      </div>
+                    </li>";
+              }
+
+             ?>
           </div>
         </div>
       </div>
