@@ -53,9 +53,9 @@ body {
 
 /*jumbotron*/
 .jumbotron {
-    background-image: url('../img/jumbotron-bg.jpg');
+    background-image: url('../img/bg1.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center top;
     height: 540px;
     text-align: center;
     position: relative;
@@ -83,10 +83,11 @@ body {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, .7);
     font-size: 40px;
     margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .jumbotron .display-4 span {
-    font-weight: 500;
+    font-weight: bold;
 }
 
 /*info panel*/
@@ -216,7 +217,7 @@ body {
 
     .jumbotron .display-4 {
         font-size: 62px;
-        margin-top: 180px;
+        margin-top: 150px;
     }
 
 

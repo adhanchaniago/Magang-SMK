@@ -22,6 +22,7 @@ $data = tampil1($perintah);
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet">
     <!-- quicksandfont -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <title>Beranda Lowongan</title>
   </head>
   <body>
@@ -55,8 +56,7 @@ $data = tampil1($perintah);
                 echo "</a>
                       <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
                         <a class='dropdown-item' href='cek.php'>Profil</a>
-                        <a class='dropdown-item' href=''>Pesan</a>
-                        <a class='dropdown-item' href='pengaturan.php'>Pengaturan</a>
+                        <a class='dropdown-item' href='Pengaturan.php'>Pengaturan</a>
                         <div class='dropdown-divider'></div>
                         <a class='dropdown-item' href='logout.php'>Keluar</a>
                       </div>
@@ -69,53 +69,44 @@ $data = tampil1($perintah);
       </div>
     </nav>
     <!-- akhir navbar -->
-    <!-- container -->
-    <div class="container">
-      <!-- judul loker -->
-      <div class="row ">
-        <div class="col">
-          <h1 class="display-4 text-daftar-lowongan">Daftar Lowongan</h1>
-          <div class="tr"></div>
-        </div>
-      </div>
-      <!-- akhir judul loker -->
-      <!-- loker -->
-      <div class="row ">
-        <?php foreach($data as $nilai): ?>
-        <!-- kotak1 -->
-        <div class="col-lg-4 my-3 box">
-          <div class="card" >
-            <div class="card-body">
-              <h5 class="card-title company"><?= $nilai["nama_perusahaan"]; ?></h5>
-              <h5 class="card-title job"><i class="fas fa-briefcase"></i><?= $nilai["kebutuhan"]; ?></h5>
-              <h5 class="card-title job"><i class="fas fa-map-marker-alt"></i><?= $nilai["kota"]; ?> - Indonesia</h5>
-              <h5 class="card-title job"><i class="fas fa-calendar-day"></i><?= $nilai["waktu"]; ?></h5>
-              <a href="detail-lowongan.php?no=<?= $nilai['no']; ?>" class="btn btn-primary  btn-lihat">Lihat Detail</a>
-            </div>
+
+    <!-- beranda -->
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container bayangan">
+          <h1 class="text-center judul">Temukan Berbagai Macam Lowongan</h1>
+          <div class="box-search">
+            <input type="text" class="input-search" placeholder="Cari Berbagai Lowongan...">
+            <button name="submit" type="submit" class="cari ">Cari</button>
           </div>
         </div>
-        <!-- kotak1 -->
-       <?php endforeach; ?>
+      </div>
+    <!-- beranda-->
+
+    <!-- lowongan -->
+    <div class="container lowongan">
+      <div class="row">
+
+        <?php foreach($data as $nilai): ?>
+        <div class="col-lg-4">
+          <div class="kotak-lowongan">
+             <img src="img/profil/perusahaan/<?= $nilai['foto'];  ?>" alt="">
+            <p class="nama"><?= $nilai["nama_perusahaan"];  ?></p>
+            <p class="tanggal"><?= $nilai["waktu"];  ?></p>
+            <div class="clear"></div>
+            <p class="kebutuhan"><i class="fas fa-briefcase"></i> <?= $nilai["kebutuhan"];  ?></p>
+            <p class="kebutuhan"><i class="fas fa-user-tie"></i> <?= $nilai["jurusan"];  ?></p>
+            <a href="detail-lowongan.php?no=<?= $nilai['no'];  ?>">
+              <button class="lihat-detail">Lihat Rincian</button>
+            </a>
+          </div>
+        </div>
+
+      <?php endforeach; ?>  
 
       </div>
     </div>
-  </div>
-  <!-- akhir loker -->
-</div>
-<!-- akhir loker -->
-</div>
-<!-- akhir container -->
-<!-- pagnantaion -->
-<nav aria-label="Page navigation example" class="pagnantaion-place">
-<ul class="pagination ">
-  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-  <li class="page-item"><a class="page-link" href="#">1</a></li>
-  <li class="page-item"><a class="page-link" href="#">2</a></li>
-  <li class="page-item"><a class="page-link" href="#">3</a></li>
-  <li class="page-item"><a class="page-link" href="#">Next</a></li>
-</ul>
-</nav>
-<!-- akhir pagnantaion -->
+    <!-- akhir lowongan -->
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

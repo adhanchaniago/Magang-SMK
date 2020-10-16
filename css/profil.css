@@ -86,7 +86,7 @@ body{
 .user-name{
   margin-top:145px;
   color: var(--color-text);
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Poppins', sans-serif;
  margin-left: 5%;
 }
 .text-user-name{
@@ -145,7 +145,7 @@ body{
 
 .judul-kotak-karya{
   font-size: 23px;
-  font-family: 'Quicksand';
+  font-family: 'Poppins';
   color:var(--color-text);
   margin-top:12px;
   margin-bottom:8px;
@@ -153,7 +153,7 @@ body{
 
 .deskripsi{
   color:var(--color-text);
-  font-family: 'Quicksand';
+  font-family: 'Poppins';
 }
 
 .btn{
@@ -188,7 +188,7 @@ body{
 
 .tambah b{
   letter-spacing: 1px;
-  font-family: 'Quicksand';
+  font-family: 'Poppins';
   font-weight: bold;
 }
 
@@ -227,7 +227,7 @@ body{
     text-transform: uppercase;
     margin-right: 30px;
     transition: .3s ease-in-out;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Poppins', sans-serif;
     letter-spacing: .8px;
   }
 
@@ -253,7 +253,7 @@ body{
 .user-name{
 	position: relative;
 	margin-top: 30px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .text-user-name{
@@ -360,7 +360,7 @@ body{
 
 .judul-kotak-karya{
   font-size: 20px;
-  font-family: 'Quicksand';
+  font-family: 'Poppins';
   color:var(--color-text);
   margin-top:15px;
   margin-bottom:3px;
@@ -368,7 +368,7 @@ body{
 
 .deskripsi{
   color:var(--color-text);
-  font-family: 'Quicksand';
+  font-family: 'Poppins';
 }
 
 
@@ -388,7 +388,7 @@ body{
 
 .tambah b{
   letter-spacing: 1px;
-  font-family: 'Quicksand';
+  font-family: 'Poppins';
   font-weight: bold;
 }
 

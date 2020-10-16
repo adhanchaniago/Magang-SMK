@@ -14,6 +14,7 @@ session_start();
     <!-- link google font -->
     <!-- orbiton font -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
     <!-- my css -->
     <link rel="stylesheet" href="css/style.css">
     <title>Welcome to My Profil</title>
@@ -46,8 +47,7 @@ session_start();
                 echo "</a>
                       <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
                         <a class='dropdown-item' href='cek.php'>Profil</a>
-                        <a class='dropdown-item' href=''>Pesan</a>
-                        <a class='dropdown-item' href='pengaturan.php'>Pengaturan</a>
+                        <a class='dropdown-item' href='Pengaturan.php'>Pengaturan</a>
                         <div class='dropdown-divider'></div>
                         <a class='dropdown-item' href='logout.php'>Keluar</a>
                       </div>

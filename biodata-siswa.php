@@ -2,12 +2,12 @@
 session_start();
 require("koneksi.php");
 
-// if(!isset($_SESSION["id"])){
-//   header("Location: index.php");
-//   exit;
-// }
+if(!isset($_SESSION["id"])){
+  header("Location: index.php");
+  exit;
+}
 
-// $id = $_SESSION["id"];
+$id = $_SESSION["id"];
 
 if(isset($_POST["submit"])){
   if(tambahBiodataSiswa($_POST,$id)>0){

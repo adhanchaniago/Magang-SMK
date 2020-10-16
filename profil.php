@@ -72,8 +72,7 @@ $result = mysqli_query($koneksi,$perintah2);
                 echo "</a>
                       <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
                         <a class='dropdown-item' href='cek.php'>Profil</a>
-                        <a class='dropdown-item' href=''>Pesan</a>
-                        <a class='dropdown-item' href='pengaturan.php'>Pengaturan</a>
+                        <a class='dropdown-item' href='Pengaturan.php'>Pengaturan</a>
                         <div class='dropdown-divider'></div>
                         <a class='dropdown-item' href='logout.php'>Keluar</a>
                       </div>
@@ -142,7 +141,7 @@ $result = mysqli_query($koneksi,$perintah2);
                         <a href="edit-karya.php?no=<?= $karya['no']; ?>" class="edit-btn"><i class="fas fa-ellipsis-h"></i></a>
                         <img src="img/profil/siswa/<?= $karya['foto']; ?>" alt="" class="thumbnail">
                         <h1 class="judul-kotak-karya"><?= $karya["judul"]; ?></h1>
-                        <p class="deskripsi"><i class="fas fa-clock"></i> <?= $karya["waktu"]; ?></p>
+                        <p class="deskripsi"><?= $karya["waktu"]; ?></p>
                         <a href="<?= $karya['link']; ?>" target="blank" class="btn btn-primary lihat">Lihat</a>
                         <!--               <a href="edit-karya.php?no=<?= $karya['no']; ?>"  class="btn btn-success edit">Edit</a>
               <a href="edit-karya.php?no=<?= $karya['no']; ?>"  class="btn btn-danger hapus">Hapus</a> -->

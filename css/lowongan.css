@@ -23,143 +23,311 @@ html.transition,
 html.transition *,
 html.transition *:before,
 html.transition *:after {
-  transition: all 750ms !important;
-  transition-delay: 0 !important;
+    transition: all 750ms !important;
+    transition-delay: 0 !important;
 }
 
-body{
-  background-color:var(--bg);
+body {
+    background-color: var(--bg);
 }
 
 /*navbar*/
-.navbar{
-  background-color:var(--bg-navbar);
-  z-index: 9999999;
-  border-bottom-right-radius: 15px; 
-  border-bottom-left-radius: 15px;
+.navbar {
+    background-color: var(--bg-navbar);
+    z-index: 9999999;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
 }
-.navbar-brand{
-  font-size: 32px;
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 200;
+
+.navbar-brand {
+    font-size: 32px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 200;
 }
-.navbar-brand,.nav-link{
-  color: white;
-  text-shadow: 2px 2px 5px black;
+
+.navbar-brand,
+.nav-link {
+    color: white;
+    text-shadow: 2px 2px 5px black;
+}
+
+.jumbotron {
+    height: 460px;
+    width: 100%;
+    background-image: url("../img/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
 
-/*jumbotron*/
-.utama{
-  background-size: cover;
-  background-position: center top;
-  height: 250px;
-  text-align: center;
-  position: relative;
-  margin-top: 60px;
-/*  background-attachment: fixed;*/
-}
-.job{
-  color:var(--color-text);
-  text-transform: capitalize;
-  font-size:16px;
+.jumbotron .bayangan {
+    position: relative;
+    z-index: 10;
 }
 
-.job i{
-  margin-right: 5px;
-}
-.card img{
-  max-height: 400px;
-}
-
-.btn-lihat{
-  width: 100%;
-  font-size:16px;
-  font-weight:500;
-  letter-spacing: .5px;
-  margin:8px auto;
+.jumbotron::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .8), rgba(0, 0, 0, .2));
+    position: absolute;
+    top: 0px;
 }
 
-.tr{
-  width: 100%;
-  height: 2px;
-  border-bottom: 2px solid var(--border);
-  margin-bottom:30px;
-  margin-top:15px;
+.judul {
+    color: white;
+    font-weight: 400;
+    font-size: 28px;
+    margin-top: 120px;
+    font-family: 'Poppins', sans-serif;
 }
 
-.text-daftar-lowongan{
-  margin-top:100px;
-  font-size:36px;
-  text-align: center;
-  font-weight:400;
-  color:var(--color-text);
+.box-search {
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.pagnantaion-place{
-  padding-left: 15%;
+.input-search {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    height: 51px;
+    width: 73%;
+    border: none;
+    outline: none;
+    border-radius: 25px 0 0 25px;
+    padding-left: 20px;
+    font-size: 20px;
+    color: navy;
+    padding-bottom: 5px;
 }
 
-.page-item,
-.page-link{
-  background-color:var(--bg-box);
-  color:var(--color-text);
+.input-search::placeholder {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: navy;
 }
 
-.box{
-  background-color:var(--bg);
+.cari {
+    position: relative;
+    border: none;
+    outline: none;
+    border-radius: 0 25px 25px 0;
+    width: 25%;
+    height: 51px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    background-color: #fdc632;
+    color: navy;
+    text-transform: lowercase;
 }
 
-.card{
-  background-color:var(--bg-box);
+.cari:focus,
+.cari:active{
+  outline: none !important;
+  box-shadow: none !important;
 }
 
-.btn-primary{
-  background-color:var(--btn-primary);
+.lowongan {
+    min-height: 300px;
 }
 
-.company{
-  color:var(--color-text);
+.kotak-lowongan {
+    width: 100%;
+    height: 200px;
+    background-color: var(--bg-box);
+    margin-top: -105px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(67, 67, 67, .5);
+    margin-bottom: 135px;
+    padding: 10px;
+    color: var(--color-text);
 }
 
-@media (min-width:992px){
-		.navbar{
-		    transition: .3s ease-in-out;
-		    height: 60px;
-        border-bottom-right-radius: 0px; 
+.kotak-lowongan img {
+    width: 60px;
+    float: left;
+    margin-right: 15px;
+}
+
+.nama,
+.tanggal {
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 0px;
+    margin-top: 3px;
+}
+
+.clear {
+    clear: both;
+}
+
+.kebutuhan {
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: -10px;
+    margin-top: 10px;
+}
+
+.lihat-detail {
+    width: 100%;
+    height: 45px;
+    background-color: #fdc632;
+    margin-top: 20px;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    color: navy;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    transition: .1s ease-in-out;
+}
+
+
+
+
+@media (min-width:992px) {
+    .navbar {
+        transition: .3s ease-in-out;
+        height: 60px;
+        border-bottom-right-radius: 0px;
         border-bottom-left-radius: 0px;
-		  }
+    }
 
 
-		 .nav-link{
-		    text-transform: uppercase;
-		    margin-right: 30px;
-		    transition: .3s ease-in-out;
+    .nav-link {
+        text-transform: uppercase;
+        margin-right: 30px;
+        transition: .3s ease-in-out;
         font-family: 'Quicksand', sans-serif;
         letter-spacing: .8px;
-		  }
+    }
 
-  .card{
-    max-width: 350px;
-    max-height: 550px;
-  }
+    .judul {
+        color: white;
+        font-weight: 400;
+        font-size: 40px;
+        margin-top: 75px;
+        font-family: 'Poppins', sans-serif;
+    }
 
-  .text-daftar-lowongan{
-    margin-top:100px;
-    font-size:42px;
-    color: var(--color-text);
-    text-align: center;
-    font-weight: 400;
-  }
+    .box-search {
+        width: 400px;
+        height: 80px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-  .pagnantaion-place{
-    padding-left: 40%;
-    padding-top: 30px;
-    padding-bottom: 15px;
-  }
+    .input-search {
+        position: relative;
+        display: inline-block;
+        box-sizing: border-box;
+        height: 51px;
+        width: 73%;
+        border: none;
+        outline: none;
+        border-radius: 25px 0 0 25px;
+        padding-left: 20px;
+        font-size: 20px;
+        color: navy;
+        padding-bottom: 5px;
+    }
 
-	
+    .input-search::placeholder {
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        color: navy;
+    }
+
+    .cari {
+        position: relative;
+        border: none;
+        outline: none;
+        border-radius: 0 25px 25px 0;
+        width: 25%;
+        height: 51px;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        background-color: #fdc632;
+        color: navy;
+        text-transform: lowercase;
+    }
+
+    .lowongan {
+        min-height: 300px;
+    }
+
+    .kotak-lowongan {
+        width: 100%;
+        height: 200px;
+        background-color: var(--bg-box);
+        margin-top: -105px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px rgba(67, 67, 67, .5);
+        margin-bottom: 135px;
+        padding: 10px;
+        color: var(--color-text);
+    }
+
+    .kotak-lowongan img {
+        width: 60px;
+        float: left;
+        margin-right: 15px;
+    }
+
+    .nama,
+    .tanggal {
+        font-size: 18px;
+        font-family: 'Poppins', sans-serif;
+        margin-bottom: 0px;
+        margin-top: 3px;
+    }
+
+    .clear {
+        clear: both;
+    }
+
+    .kebutuhan {
+        font-size: 18px;
+        font-family: 'Poppins', sans-serif;
+        margin-bottom: -10px;
+        margin-top: 10px;
+    }
+
+    .lihat-detail {
+        width: 100%;
+        height: 45px;
+        background-color: #fdc632;
+        margin-top: 20px;
+        font-size: 18px;
+        outline: none;
+        border: none;
+        color: navy;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        transition: .2s ease-in-out;
+    }
+
+    .lihat-detail:hover {
+        background-color: navy;
+        color: #fdc632;
+        transition: .2s ease-in-out;
+    }
+
 }
-
-
-

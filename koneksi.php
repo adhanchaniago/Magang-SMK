@@ -35,10 +35,10 @@ function regristasi($data){
 		$perintah2 = "SELECT * FROM akun WHERE email='$email'";
 		$query = mysqli_query($koneksi,$perintah2);
 		$data = mysqli_fetch_assoc($query);
-		$_SESSION["id"]=$data["id"];
-		$_SESSION["level"] = $data["level"];
-		$_SESSION["tipe"]  = $data["tipe"];
-		$_SESSION["email"] = $data["email"];
+		$_SESSION["id"]=htmlspecialchars($data["id"]);
+		$_SESSION["level"] = htmlspecialchars($data["level"]);
+		$_SESSION["tipe"]  = htmlspecialchars($data["tipe"]);
+		$_SESSION["email"] = htmlspecialchars($data["email"]);
 
 		return mysqli_affected_rows($koneksi);
 
@@ -80,6 +80,7 @@ function login($data){
 				$query = mysqli_query($koneksi,"SELECT * FROM profil_siswa WHERE id='$id'");
 				$hasil = mysqli_fetch_assoc($query);
 				$_SESSION["nama"]=$hasil["nama"];
+				$_SESSION["foto"]=$hasil["foto"];
 				header("Location: cek.php");
 				exit;
 			}else{
@@ -140,6 +141,8 @@ function tambahBiodataSiswa($data,$id){
 	mysqli_query($koneksi,$perintah);
 	$_SESSION["tipe"]="siswa";
 	$_SESSION["nama"]  = $nama;
+	$_SESSION["id"]=$id;
+	$_SESSION["foto"]=$gambar;
 	return mysqli_affected_rows($koneksi);
 }
 
@@ -183,11 +186,11 @@ function tambahKarya($data,$id,$waktu){
 function tambahLowongan($data,$id,$waktu,$nama,$foto){
 	global $koneksi;
 
-	$kebutuhan = $data["kebutuhan"];
-	$alamat = $data["alamat"];
-	$jurusan = $data["jurusan"];
-	$gaji = $data["gaji"];
-	$kota = $data["kota"];
+	$kebutuhan = htmlspecialchars($data["kebutuhan"]);
+	$alamat = htmlspecialchars($data["alamat"]);
+	$jurusan = htmlspecialchars($data["jurusan"]);
+	$gaji = htmlspecialchars($data["gaji"]);
+	$kota = htmlspecialchars($data["kota"]);
 
 	$perintah = "INSERT INTO lowongan VALUES
 	('','$id','$nama','$kebutuhan','$alamat','$kota','$jurusan','$gaji','$waktu','$foto')";
@@ -200,9 +203,9 @@ function tambahLowongan($data,$id,$waktu,$nama,$foto){
 function updateKarya($data,$no){
 	global $koneksi;
 
-	$judul = $data["judul"];
-	$link = $data["link"];
-	$gambarLama = $data['gambarLama'];
+	$judul = htmlspecialchars($data["judul"]);
+	$link = htmlspecialchars($data["link"]);
+	$gambarLama = htmlspecialchars($data['gambarLama']);
 
 	//cek apakah gambar diperbarui atau tidak
 	if($_FILES['gambar']['error']===4){
@@ -286,11 +289,11 @@ function updateProfilPerusahaan($data,$id){
 function updateLowongan($data,$no){
 	global $koneksi;
 
-	$kebutuhan = $data["kebutuhan"];
-	$alamat = $data["alamat"];
-	$jurusan = $data["jurusan"];
-	$gaji = $data["gaji"];
-	$kota = $data["kota"];
+	$kebutuhan = htmlspecialchars($data["kebutuhan"]);
+	$alamat = htmlspecialchars($data["alamat"]);
+	$jurusan = htmlspecialchars($data["jurusan"]);
+	$gaji = htmlspecialchars($data["gaji"]);
+	$kota = htmlspecialchars($data["kota"]);
 
 	$perintah = "UPDATE lowongan SET
 							kebutuhan ='$kebutuhan',
@@ -305,6 +308,28 @@ function updateLowongan($data,$no){
 }
 
 
+//ajukan lamaran
+function ajukanLamaran($data,$id_siswa,$foto,$id_perusahan,$kebutuhan){
+	global $koneksi;
+
+	$nama = htmlspecialchars($data["nama"]);
+	$kelamin = htmlspecialchars($data["kelamin"]);
+	$ttl  = htmlspecialchars($data["ttl"]);
+	$alamat = htmlspecialchars($data["alamat"]);
+	$jurusan = htmlspecialchars($data["jurusan"]);
+	$telp = htmlspecialchars($data["telp"]);
+	$email = htmlspecialchars($data["email"]);
+	$sekolah = htmlspecialchars($data["sekolah"]);
+
+	$perintah = "INSERT INTO pengajuan VALUES(
+				'','$id_siswa','$nama','$kelamin',
+				'$ttl','alamat','$jurusan','$telp',
+				'$email','$sekolah','$foto','$id_perusahan',
+				'$kebutuhan')";
+	mysqli_query($koneksi,$perintah);
+
+	return mysqli_affected_rows($koneksi);
+}
 
 
 

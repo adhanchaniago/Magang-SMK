@@ -67,8 +67,7 @@ $_SESSION["foto"] = $data["foto"];
                 profil
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="singin.php">Masuk</a>
-                <a class="dropdown-item" href="#">Beranda Profil</a>
+                <a class="dropdown-item" href="#">Profil</a>
                 <a class="dropdown-item" href="pengaturan.php">Pengaturan</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="logout.php">Keluar</a>

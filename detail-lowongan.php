@@ -56,8 +56,7 @@ $data = tampil($perintah);
                 echo "</a>
                       <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
                         <a class='dropdown-item' href='cek.php'>Profil</a>
-                        <a class='dropdown-item' href=''>Pesan</a>
-                        <a class='dropdown-item' href='pengaturan.php'>Pengaturan</a>
+                        <a class='dropdown-item' href='Pengaturan.php'>Pengaturan</a>
                         <div class='dropdown-divider'></div>
                         <a class='dropdown-item' href='logout.php'>Keluar</a>
                       </div>
@@ -114,7 +113,7 @@ $data = tampil($perintah);
             
               <tr>
                 <td>
-                  <a href="ajukan-lowongan.html">
+                  <a href="ajukan-lowongan.php?id=<?= $data['id']; ?>&kebutuhan=<?= $data['kebutuhan']; ?>">
                     <button class="ajukan btn-success"><span>Ajukan Lamaran</span>
                   <i class="fad fa-arrow-to-top"></i></button>
                   </a>
