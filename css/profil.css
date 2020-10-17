@@ -215,6 +215,10 @@ body{
   margin-top:0px;
 }
 
+.row-karya{
+  min-height: 400px;
+}
+
 @media(min-width: 992px){
   .navbar{
     background-color:var(--bg-navbar);

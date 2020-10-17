@@ -2,13 +2,17 @@
 session_start();
 require("koneksi.php");
 
+if(!isset($_GET["no"])){
+  header("Location: lowongan.php");
+  exit;
+}
 $no = $_GET["no"];
 $perintah = "SELECT * FROM lowongan WHERE no='$no'";
 $data = tampil($perintah);
 
  ?>
 <!doctype html>
-<html lang="en" data-theme="null">
+<html lang="en" data-theme="<?= $_COOKIE['mode']; ?>">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">

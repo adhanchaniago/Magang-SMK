@@ -31,7 +31,7 @@ if(isset($_SESSION["id"])){
 
  ?>
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="<?= $_COOKIE['mode']; ?>">
 
 <head>
     <!-- Required meta tags -->

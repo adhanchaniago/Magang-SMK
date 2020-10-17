@@ -3,7 +3,7 @@ session_start();
 
 ?>
 <!doctype html>
-<html lang="en" data-theme="null">
+<html lang="en" data-theme="<?= $_COOKIE['mode']; ?>">
 
 <head>
     <!-- Required meta tags -->

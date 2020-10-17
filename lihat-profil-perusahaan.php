@@ -3,6 +3,10 @@ session_start();
 require("koneksi.php");
 
 //melakukan pengecekan terhadap user yang belum login
+if(!isset($_GET["id"])){
+  header("Location: lowongan.php");
+  exit;
+}
 
 $id = $_GET["id"];
 $perintah = "SELECT * FROM profil_perusahaan WHERE id='$id'";
@@ -14,7 +18,7 @@ $lowongan = tampil1($perintah2);
 
  ?>
 <!doctype html>
-<html lang="en" data-theme="null">
+<html lang="en" data-theme="<?= $_COOKIE['mode']; ?>">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">

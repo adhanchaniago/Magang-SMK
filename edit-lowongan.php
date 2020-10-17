@@ -2,6 +2,16 @@
 session_start();;
 require("koneksi.php");
 
+if(!isset($_SESSION["id"])){
+   header("Location: index.php");
+  exit;
+}
+
+if($_SESSION["tipe"]=="siswa"){
+   header("Location: index.php");
+  exit;
+}
+
 $id = $_SESSION["id"];
 $perintah2 = "SELECT * FROM lowongan WHERE id='$id' ORDER BY no DESC";
 $lowongan = tampil1($perintah2);
@@ -10,7 +20,7 @@ $result = mysqli_query($koneksi,$perintah2);
 
  ?>
 <!doctype html>
-<html lang="en" data-theme="null ">
+<html lang="en" data-theme="<?= $_COOKIE['mode']; ?>">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">

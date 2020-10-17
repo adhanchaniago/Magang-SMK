@@ -1,8 +1,34 @@
 <?php 
 session_start();
+
+if(!isset($_SESSION["id"])){
+  header("Location: index.php");
+  exit;
+}
+
+
+
+if(isset($_POST["terang"])){
+  $cookie_name = "mode";
+  $cookie_value = "null";
+  setcookie($cookie_name,$cookie_value,time()+(86400*365),"/");
+  echo "<script>
+       document.location.href='pengaturan.php';
+      </script>";
+}
+
+if(isset($_POST["gelap"])){
+  $cookie_name = "mode";
+  $cookie_value = "dark";
+  setcookie($cookie_name,$cookie_value,time()+(86400*365),"/");
+  echo "<script>
+       document.location.href='pengaturan.php';
+      </script>";
+}
+
  ?>
 <!doctype html>
-<html lang="en" data-theme="null">
+<html lang="en" data-theme="<?= $_COOKIE['mode']; ?>">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -15,6 +41,7 @@ session_start();
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet">
     <!-- quicksandfont -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <title>Pengaturan</title>
   </head>
   <body>
@@ -66,17 +93,17 @@ session_start();
           <table class="table table-borderless">
             <thead>
               <tr>
-                <td class="text-left mode">Mode Malam</td>
-                <td class="button-mode">
-                  <label class="switch">
-                    <form action="" method="post">
-                      <input type="checkbox" id="switch" name="button-dark">
-                      <span class="slider round"></span>
-                    </form>
-                  </label>
-                </td>
+               <td class="kolom-1">
+                 <form action="" method="post">
+                   <button class="btn btn-terang" type="submit" name="terang">Mode Terang</button>
+                 </form>
+               </td>
+               <td class="kolom-2">
+                 <form action="" method="post">
+                   <button class="btn btn-gelap" type="submit" name="gelap">Mode Gelap</button>
+                 </form>
+               </td>
               </tr>
-
             </thead>
           </table>
         </div>

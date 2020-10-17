@@ -20,7 +20,7 @@ $result = mysqli_query($koneksi,$perintah2);
 
  ?>
 <!doctype html>
-<html lang="en" data-theme="null">
+<html lang="en" data-theme="<?= $_COOKIE['mode']; ?>">
 
 <head>
     <!-- Required meta tags -->
@@ -131,7 +131,7 @@ $result = mysqli_query($koneksi,$perintah2);
                     <div class="tr"></div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row row-karya">
 
                 <?php if(mysqli_fetch_assoc($result)>=1){?>
                 <?php foreach($data_karya as $karya): ?>

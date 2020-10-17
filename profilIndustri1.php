@@ -7,6 +7,12 @@ if(!isset($_SESSION["id"])){
   header("Location: singin.php");
 }
 
+if($_SESSION["tipe"]=="siswa"){
+   header("Location: index.php");
+  exit;
+}
+
+
 $id = $_SESSION["id"];
 $perintah = "SELECT * FROM profil_perusahaan WHERE id='$id'";
 $perintah2 = "SELECT * FROM lowongan WHERE id='$id' ORDER BY no DESC";
@@ -18,7 +24,7 @@ $_SESSION["foto"] = $data["foto"];
 
  ?>
 <!doctype html>
-<html lang="en" data-theme="null">
+<html lang="en" data-theme="<?= $_COOKIE['mode']; ?>">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -48,12 +54,11 @@ $_SESSION["foto"] = $data["foto"];
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link garis-bawah active" href="index.php">beranda <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link garis-bawah active" href="lowongan.php">lowongan</a>
-            <a class="nav-item nav-link garis-bawah active" href="#">Pesan</a>
+            <a class="nav-item nav-link garis-bawah active" href="index.php">Beranda <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link garis-bawah active" href="lowongan.php">Lowongan</a>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                profil
+                Profil
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="cek.php">Profil</a>
@@ -121,7 +126,7 @@ $_SESSION["foto"] = $data["foto"];
             <div class="tr"></div>
           </div>
         </div>
-        <div class="row" id="box-pengajuan">
+        <div class="row pengajuan" id="box-pengajuan">
 
         
 

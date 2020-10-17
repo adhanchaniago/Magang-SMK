@@ -7,6 +7,12 @@ if(!isset($_SESSION["id"])){
   exit;
 }
 
+if($_SESSION["tipe"]=="siswa"){
+  header("Location: index.php");
+  exit;
+}
+
+
 $id = $_SESSION["id"];
 
 $perintah = "SELECT * FROM profil_perusahaan WHERE id='$id'";
@@ -24,7 +30,7 @@ if(isset($_POST["submit"])){
 
  ?>
 <!doctype html>
-<html lang="en" data-theme="null">
+<html lang="en" data-theme="<?= $_COOKIE['mode']; ?>">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">

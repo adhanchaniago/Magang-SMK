@@ -7,6 +7,11 @@ if(!isset($_SESSION["id"])){
   header("Location: singin.php");
 }
 
+if($_SESSION["tipe"]=="siswa"){
+   header("Location: index.php");
+  exit;
+}
+
 $id = $_SESSION["id"];
 $perintah = "SELECT * FROM profil_perusahaan WHERE id='$id'";
 $perintah2 = "SELECT * FROM lowongan WHERE id='$id' ORDER BY no DESC";
@@ -18,7 +23,7 @@ $_SESSION["foto"] = $data["foto"];
 
  ?>
 <!doctype html>
-<html lang="en" data-theme="null">
+<html lang="en" data-theme="<?= $_COOKIE['mode']; ?>">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -135,7 +140,7 @@ $_SESSION["foto"] = $data["foto"];
             <div class="tr"></div>
           </div>
         </div>
-        <div class="row" id="box-lowongan">
+        <div class="row row-lowongan" id="box-lowongan">
 
         <?php foreach($lowongan as $low): ?>
           <div class="col-lg-4 my-3 box">

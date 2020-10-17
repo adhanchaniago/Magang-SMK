@@ -2,8 +2,15 @@
 session_start();
 require("koneksi.php");
 
-//cek apakah user sudah login 
-//cek apakah user ber type perusahaan
+if(!isset($_SESSION["id"])){
+  header("Location: index.php");
+  exit;
+}
+
+if($_SESSION["tipe"]=="siswa"){
+   header("Location: index.php");
+  exit;
+}
 
 //melakukan penambahan lowongan
 $id = $_SESSION["id"];
@@ -27,7 +34,7 @@ if(isset($_POST["submit"])){
 
  ?>
 <!doctype html>
-<html lang="en" data-theme="null">
+<html lang="en" data-theme="<?= $_COOKIE['mode']; ?>">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">

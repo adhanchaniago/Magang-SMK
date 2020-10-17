@@ -60,6 +60,10 @@ form{
   font-size:18px;
 }
 
+.input::placeholder{
+  color:var(--color-text);
+}
+
 .text-biodata{
   text-align: center;
   font-family: 'Quicksand';

@@ -241,6 +241,10 @@ body{
   float: right;
 }
 
+.row-lowongan{
+  min-height: 400px;
+}
+
 
 
 
